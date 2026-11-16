@@ -1,0 +1,12 @@
+extends: smoke.yaml
+name: surrogate_smoke
+output_dir: results/surrogate_smoke
+surrogate:
+  enabled: true
+  source_lattice: [4, 4, 4]
+  source_bounds: [[0.4, 1.6], [0.4, 1.6], [0.4, 1.6]]
+  held_out: [[1.0, 1.0, 1.0], [0.6, 1.0, 1.4]]
+  far_source: auto
+training: {source_batch_size: 16}
+evaluation: {timing_repeats: 1}
+benchmarks: {accuracy_target: 0.01}

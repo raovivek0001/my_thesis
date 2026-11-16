@@ -1,0 +1,19 @@
+extends: smoke.yaml
+name: benchmark_smoke
+output_dir: results/benchmark_smoke
+benchmarks:
+  experiments: [configs/smoke.yaml]
+  grid_sizes: [11, 21, 31]
+  batch_sizes: [64, 128]
+  collocation_budgets: [4096]
+  precisions: [float32]
+  devices: [cpu]
+  modes: [single, surrogate]
+  inference_repeats: 1
+  memory_isolation: true
+  enable_lbfgs: false
+  accuracy_target: 0.01
+  save_fields: true
+  reuse_completed: true
+  fail_fast: true
+  optional_fmm: true

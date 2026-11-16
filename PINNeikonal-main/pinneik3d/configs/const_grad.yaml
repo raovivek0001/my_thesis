@@ -1,0 +1,8 @@
+extends: base.yaml
+name: const_grad
+output_dir: results/const_grad
+training:
+  iterations: 20000
+  batch_size: 2048
+  lbfgs: {enabled: true, iterations: 50, max_iter: 20, batch_size: 8192, history_size: 50}
+evaluation: {grid_size: 101, validation_grid_size: 31, batch_size: 16384}

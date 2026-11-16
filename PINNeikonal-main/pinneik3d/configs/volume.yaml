@@ -1,0 +1,18 @@
+extends: base.yaml
+name: volume
+output_dir: results/volume
+velocity:
+  kind: volume
+  path: data/velocity.npy
+  # volume[ix,iy,iz], in km/s. Use axis_order: zyx for file arrays ordered z,y,x.
+  axis_order: xyz
+  velocity_scale: 1.0  # 0.001 if the input velocities are in m/s
+  # For .bin also specify file-axis shape, dtype (e.g. '<f4'), and order: C or F.
+  # shape: [201, 201, 201]
+  dtype: float32
+  order: C
+network:
+  width: 40
+  fourier: {enabled: true, size: 64, scale: 1.0}
+training: {iterations: 40000, batch_size: 4096}
+evaluation: {grid_size: 101, validation_grid_size: 31, batch_size: 8192, reference: fsm}

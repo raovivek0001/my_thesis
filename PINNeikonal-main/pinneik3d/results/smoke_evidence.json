@@ -1,0 +1,659 @@
+{
+  "mathematical_smoke": {
+    "status": "passed",
+    "scope": "analytic equation, analytic tau, numerical factored FSM; no PINN inference",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "runs": [
+      {
+        "seed": 42,
+        "grid_n": 31,
+        "fsm_backend": "python",
+        "max_eikonal_relative_residual": 2.4134511056317365e-09,
+        "max_factored_residual": 1.1029260837958077e-11,
+        "fsm_cycles": 4,
+        "fsm_converged": true,
+        "fsm_seconds": null,
+        "diagnostic_wall_seconds": 26.5268617,
+        "timing_valid_for_baseline": false,
+        "relative_l2": 0.00027106011375259496,
+        "max_abs_error": 0.0003658091995248913,
+        "mean_abs_error": 8.283295807614542e-05,
+        "config": {
+          "name": "smoke",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "output_dir": "results/smoke",
+          "runtime": {
+            "device": "cpu",
+            "precision": "float32",
+            "amp_dtype": "auto",
+            "deterministic": true,
+            "num_threads": 1
+          },
+          "domain": {
+            "bounds": [
+              [
+                0.0,
+                2.0
+              ],
+              [
+                0.0,
+                2.0
+              ],
+              [
+                0.0,
+                2.0
+              ]
+            ],
+            "source": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "velocity": {
+            "kind": "constant_gradient",
+            "v0": 2.0,
+            "gradient": [
+              0.0,
+              0.0,
+              0.5
+            ]
+          },
+          "network": {
+            "hidden_layers": 10,
+            "width": 20,
+            "activation": "adaptive_atan",
+            "activation_scale": 10.0,
+            "fourier": {
+              "enabled": false,
+              "size": 32,
+              "scale": 1.0,
+              "include_raw": true
+            }
+          },
+          "loss": {
+            "eps": 1e-08,
+            "weights": {
+              "pde": 1.0,
+              "positivity": 1.0,
+              "source": 1.0
+            },
+            "adaptive": {
+              "enabled": true,
+              "update_every": 50,
+              "beta": 0.9,
+              "min_weight": 0.001,
+              "max_weight": 1000.0
+            }
+          },
+          "training": {
+            "iterations": 200,
+            "batch_size": 128,
+            "lr": 0.002,
+            "lr_min": 0.0002,
+            "schedule": "cosine",
+            "log_every": 50,
+            "eval_every": 50,
+            "checkpoint_every": 200,
+            "source_batch_size": 16,
+            "gradient_clip": null,
+            "initial_checkpoint": null,
+            "resume_checkpoint": null,
+            "lbfgs": {
+              "enabled": false,
+              "iterations": 50,
+              "max_iter": 20,
+              "batch_size": 8192,
+              "lr": 1.0,
+              "history_size": 50,
+              "tolerance_grad": 1e-09,
+              "tolerance_change": 1e-12
+            }
+          },
+          "evaluation": {
+            "grid_size": 31,
+            "validation_grid_size": 11,
+            "batch_size": 4096,
+            "thresholds": [
+              0.01,
+              0.001
+            ],
+            "reference": "auto",
+            "refinement": 2,
+            "save_field": true,
+            "plots": true
+          },
+          "fsm": {
+            "tolerance": 1e-08,
+            "max_cycles": 100,
+            "backend": "numba"
+          },
+          "surrogate": {
+            "enabled": false,
+            "source_lattice": [
+              4,
+              4,
+              4
+            ],
+            "source_bounds": [
+              [
+                0.4,
+                1.6
+              ],
+              [
+                0.4,
+                1.6
+              ],
+              [
+                0.4,
+                1.6
+              ]
+            ],
+            "held_out": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                0.6,
+                1.0,
+                1.4
+              ]
+            ],
+            "far_source": "auto"
+          },
+          "config_path": "V:\\thesis\\PINNeikonal-main - Copy\\PINNeikonal-main\\pinneik3d\\configs\\smoke.yaml"
+        },
+        "hardware": {
+          "python_version": "3.8.10",
+          "python_executable": "V:\\thesis\\PINNeikonal-main - Copy\\PINNeikonal-main\\.venv\\Scripts\\python.exe",
+          "os": "Windows-10-10.0.26300-SP0",
+          "cpu_model": "AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD",
+          "logical_cpu_count": 12,
+          "physical_cpu_count": 6,
+          "system_ram_bytes": 16556589056,
+          "device": "not_selected",
+          "torch_version": null,
+          "cuda_version": null,
+          "cuda_available": false,
+          "gpu_model": null,
+          "gpu_models_detected": [
+            "NVIDIA GeForce GTX 1650"
+          ],
+          "gpu_driver": "617.14",
+          "package_versions": {
+            "torch": null,
+            "numpy": "1.18.5",
+            "scipy": "1.4.1",
+            "numba": null,
+            "PyYAML": "6.0.3",
+            "matplotlib": "3.2.2",
+            "psutil": "7.2.2",
+            "pytest": null
+          }
+        }
+      },
+      {
+        "seed": 43,
+        "grid_n": 31,
+        "fsm_backend": "python",
+        "max_eikonal_relative_residual": 1.4352120603078333e-09,
+        "max_factored_residual": 1.548744466006724e-11,
+        "fsm_cycles": 4,
+        "fsm_converged": true,
+        "fsm_seconds": null,
+        "diagnostic_wall_seconds": 25.5013182,
+        "timing_valid_for_baseline": false,
+        "relative_l2": 0.00027106011375259496,
+        "max_abs_error": 0.0003658091995248913,
+        "mean_abs_error": 8.283295807614542e-05,
+        "config": {
+          "name": "smoke",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "output_dir": "results/smoke",
+          "runtime": {
+            "device": "cpu",
+            "precision": "float32",
+            "amp_dtype": "auto",
+            "deterministic": true,
+            "num_threads": 1
+          },
+          "domain": {
+            "bounds": [
+              [
+                0.0,
+                2.0
+              ],
+              [
+                0.0,
+                2.0
+              ],
+              [
+                0.0,
+                2.0
+              ]
+            ],
+            "source": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "velocity": {
+            "kind": "constant_gradient",
+            "v0": 2.0,
+            "gradient": [
+              0.0,
+              0.0,
+              0.5
+            ]
+          },
+          "network": {
+            "hidden_layers": 10,
+            "width": 20,
+            "activation": "adaptive_atan",
+            "activation_scale": 10.0,
+            "fourier": {
+              "enabled": false,
+              "size": 32,
+              "scale": 1.0,
+              "include_raw": true
+            }
+          },
+          "loss": {
+            "eps": 1e-08,
+            "weights": {
+              "pde": 1.0,
+              "positivity": 1.0,
+              "source": 1.0
+            },
+            "adaptive": {
+              "enabled": true,
+              "update_every": 50,
+              "beta": 0.9,
+              "min_weight": 0.001,
+              "max_weight": 1000.0
+            }
+          },
+          "training": {
+            "iterations": 200,
+            "batch_size": 128,
+            "lr": 0.002,
+            "lr_min": 0.0002,
+            "schedule": "cosine",
+            "log_every": 50,
+            "eval_every": 50,
+            "checkpoint_every": 200,
+            "source_batch_size": 16,
+            "gradient_clip": null,
+            "initial_checkpoint": null,
+            "resume_checkpoint": null,
+            "lbfgs": {
+              "enabled": false,
+              "iterations": 50,
+              "max_iter": 20,
+              "batch_size": 8192,
+              "lr": 1.0,
+              "history_size": 50,
+              "tolerance_grad": 1e-09,
+              "tolerance_change": 1e-12
+            }
+          },
+          "evaluation": {
+            "grid_size": 31,
+            "validation_grid_size": 11,
+            "batch_size": 4096,
+            "thresholds": [
+              0.01,
+              0.001
+            ],
+            "reference": "auto",
+            "refinement": 2,
+            "save_field": true,
+            "plots": true
+          },
+          "fsm": {
+            "tolerance": 1e-08,
+            "max_cycles": 100,
+            "backend": "numba"
+          },
+          "surrogate": {
+            "enabled": false,
+            "source_lattice": [
+              4,
+              4,
+              4
+            ],
+            "source_bounds": [
+              [
+                0.4,
+                1.6
+              ],
+              [
+                0.4,
+                1.6
+              ],
+              [
+                0.4,
+                1.6
+              ]
+            ],
+            "held_out": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                0.6,
+                1.0,
+                1.4
+              ]
+            ],
+            "far_source": "auto"
+          },
+          "config_path": "V:\\thesis\\PINNeikonal-main - Copy\\PINNeikonal-main\\pinneik3d\\configs\\smoke.yaml"
+        },
+        "hardware": {
+          "python_version": "3.8.10",
+          "python_executable": "V:\\thesis\\PINNeikonal-main - Copy\\PINNeikonal-main\\.venv\\Scripts\\python.exe",
+          "os": "Windows-10-10.0.26300-SP0",
+          "cpu_model": "AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD",
+          "logical_cpu_count": 12,
+          "physical_cpu_count": 6,
+          "system_ram_bytes": 16556589056,
+          "device": "not_selected",
+          "torch_version": null,
+          "cuda_version": null,
+          "cuda_available": false,
+          "gpu_model": null,
+          "gpu_models_detected": [
+            "NVIDIA GeForce GTX 1650"
+          ],
+          "gpu_driver": "617.14",
+          "package_versions": {
+            "torch": null,
+            "numpy": "1.18.5",
+            "scipy": "1.4.1",
+            "numba": null,
+            "PyYAML": "6.0.3",
+            "matplotlib": "3.2.2",
+            "psutil": "7.2.2",
+            "pytest": null
+          }
+        }
+      },
+      {
+        "seed": 44,
+        "grid_n": 31,
+        "fsm_backend": "python",
+        "max_eikonal_relative_residual": 2.065534521200618e-09,
+        "max_factored_residual": 1.4846734952556062e-11,
+        "fsm_cycles": 4,
+        "fsm_converged": true,
+        "fsm_seconds": null,
+        "diagnostic_wall_seconds": 24.484247200000006,
+        "timing_valid_for_baseline": false,
+        "relative_l2": 0.00027106011375259496,
+        "max_abs_error": 0.0003658091995248913,
+        "mean_abs_error": 8.283295807614542e-05,
+        "config": {
+          "name": "smoke",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "output_dir": "results/smoke",
+          "runtime": {
+            "device": "cpu",
+            "precision": "float32",
+            "amp_dtype": "auto",
+            "deterministic": true,
+            "num_threads": 1
+          },
+          "domain": {
+            "bounds": [
+              [
+                0.0,
+                2.0
+              ],
+              [
+                0.0,
+                2.0
+              ],
+              [
+                0.0,
+                2.0
+              ]
+            ],
+            "source": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "velocity": {
+            "kind": "constant_gradient",
+            "v0": 2.0,
+            "gradient": [
+              0.0,
+              0.0,
+              0.5
+            ]
+          },
+          "network": {
+            "hidden_layers": 10,
+            "width": 20,
+            "activation": "adaptive_atan",
+            "activation_scale": 10.0,
+            "fourier": {
+              "enabled": false,
+              "size": 32,
+              "scale": 1.0,
+              "include_raw": true
+            }
+          },
+          "loss": {
+            "eps": 1e-08,
+            "weights": {
+              "pde": 1.0,
+              "positivity": 1.0,
+              "source": 1.0
+            },
+            "adaptive": {
+              "enabled": true,
+              "update_every": 50,
+              "beta": 0.9,
+              "min_weight": 0.001,
+              "max_weight": 1000.0
+            }
+          },
+          "training": {
+            "iterations": 200,
+            "batch_size": 128,
+            "lr": 0.002,
+            "lr_min": 0.0002,
+            "schedule": "cosine",
+            "log_every": 50,
+            "eval_every": 50,
+            "checkpoint_every": 200,
+            "source_batch_size": 16,
+            "gradient_clip": null,
+            "initial_checkpoint": null,
+            "resume_checkpoint": null,
+            "lbfgs": {
+              "enabled": false,
+              "iterations": 50,
+              "max_iter": 20,
+              "batch_size": 8192,
+              "lr": 1.0,
+              "history_size": 50,
+              "tolerance_grad": 1e-09,
+              "tolerance_change": 1e-12
+            }
+          },
+          "evaluation": {
+            "grid_size": 31,
+            "validation_grid_size": 11,
+            "batch_size": 4096,
+            "thresholds": [
+              0.01,
+              0.001
+            ],
+            "reference": "auto",
+            "refinement": 2,
+            "save_field": true,
+            "plots": true
+          },
+          "fsm": {
+            "tolerance": 1e-08,
+            "max_cycles": 100,
+            "backend": "numba"
+          },
+          "surrogate": {
+            "enabled": false,
+            "source_lattice": [
+              4,
+              4,
+              4
+            ],
+            "source_bounds": [
+              [
+                0.4,
+                1.6
+              ],
+              [
+                0.4,
+                1.6
+              ],
+              [
+                0.4,
+                1.6
+              ]
+            ],
+            "held_out": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                0.6,
+                1.0,
+                1.4
+              ]
+            ],
+            "far_source": "auto"
+          },
+          "config_path": "V:\\thesis\\PINNeikonal-main - Copy\\PINNeikonal-main\\pinneik3d\\configs\\smoke.yaml"
+        },
+        "hardware": {
+          "python_version": "3.8.10",
+          "python_executable": "V:\\thesis\\PINNeikonal-main - Copy\\PINNeikonal-main\\.venv\\Scripts\\python.exe",
+          "os": "Windows-10-10.0.26300-SP0",
+          "cpu_model": "AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD",
+          "logical_cpu_count": 12,
+          "physical_cpu_count": 6,
+          "system_ram_bytes": 16556589056,
+          "device": "not_selected",
+          "torch_version": null,
+          "cuda_version": null,
+          "cuda_available": false,
+          "gpu_model": null,
+          "gpu_models_detected": [
+            "NVIDIA GeForce GTX 1650"
+          ],
+          "gpu_driver": "617.14",
+          "package_versions": {
+            "torch": null,
+            "numpy": "1.18.5",
+            "scipy": "1.4.1",
+            "numba": null,
+            "PyYAML": "6.0.3",
+            "matplotlib": "3.2.2",
+            "psutil": "7.2.2",
+            "pytest": null
+          }
+        }
+      }
+    ],
+    "aggregate": [
+      {
+        "grid_n": 31,
+        "fsm_backend": "python",
+        "run_count": 3,
+        "seed_count": 3,
+        "three_seed_requirement_met": true,
+        "relative_l2_count": 3,
+        "relative_l2_mean": 0.00027106011375259496,
+        "relative_l2_std": 0.0,
+        "max_abs_error_count": 3,
+        "max_abs_error_mean": 0.0003658091995248913,
+        "max_abs_error_std": 0.0,
+        "mean_abs_error_count": 3,
+        "mean_abs_error_mean": 8.283295807614542e-05,
+        "mean_abs_error_std": 0.0,
+        "max_eikonal_relative_residual_count": 3,
+        "max_eikonal_relative_residual_mean": 1.9713992290467295e-09,
+        "max_eikonal_relative_residual_std": 4.958669149789376e-10,
+        "max_factored_residual_count": 3,
+        "max_factored_residual_mean": 1.3787813483527126e-11,
+        "max_factored_residual_std": 2.41036029591154e-12
+      }
+    ],
+    "artifacts": [
+      "V:\\thesis\\PINNeikonal-main - Copy\\PINNeikonal-main\\pinneik3d\\results\\validation\\figures\\error_slices.png",
+      "V:\\thesis\\PINNeikonal-main - Copy\\PINNeikonal-main\\pinneik3d\\results\\validation\\figures\\error_slices.pdf",
+      "V:\\thesis\\PINNeikonal-main - Copy\\PINNeikonal-main\\pinneik3d\\results\\validation\\figures\\traveltime_contours.png",
+      "V:\\thesis\\PINNeikonal-main - Copy\\PINNeikonal-main\\pinneik3d\\results\\validation\\figures\\traveltime_contours.pdf"
+    ]
+  },
+  "training_smoke": {
+    "status": "blocked",
+    "reason": "PyTorch/Numba are unavailable. Dependency downloads were blocked by network socket permissions (WinError 10013) during this workspace session.",
+    "wall_seconds": null,
+    "under_two_minutes": null
+  },
+  "hardware": {
+    "python_version": "3.8.10",
+    "python_executable": "V:\\thesis\\PINNeikonal-main - Copy\\PINNeikonal-main\\.venv\\Scripts\\python.exe",
+    "os": "Windows-10-10.0.26300-SP0",
+    "cpu_model": "AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD",
+    "logical_cpu_count": 12,
+    "physical_cpu_count": 6,
+    "system_ram_bytes": 16556589056,
+    "device": "not_selected",
+    "torch_version": null,
+    "cuda_version": null,
+    "cuda_available": false,
+    "gpu_model": null,
+    "gpu_models_detected": [
+      "NVIDIA GeForce GTX 1650"
+    ],
+    "gpu_driver": "617.14",
+    "package_versions": {
+      "torch": null,
+      "numpy": "1.18.5",
+      "scipy": "1.4.1",
+      "numba": null,
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.2.2",
+      "psutil": "7.2.2",
+      "pytest": null
+    }
+  }
+}

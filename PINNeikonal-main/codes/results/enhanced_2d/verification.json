@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-16",
+  "scope": "original 2D cases, actual trained/refined predictions",
+  "runtime": {
+    "python": "3.8.10",
+    "tensorflow": "2.2.0",
+    "sciann": "0.5.4.0",
+    "device": "CPU"
+  },
+  "unit_tests": {
+    "passed": 2,
+    "failed": 0,
+    "checks": [
+      "directional finite-difference gradient agreement and objective reduction",
+      "balanced disjoint deterministic per-source samples"
+    ]
+  },
+  "python38_syntax": "passed",
+  "notebooks": {
+    "script1": {
+      "code_cells_executed": 19,
+      "status": "passed"
+    },
+    "script3": {
+      "code_cells_executed": 19,
+      "status": "passed"
+    }
+  },
+  "saved_array_checks": {
+    "script1": {
+      "archive_equals_npy": "passed",
+      "relative_l2_equals_recomputed": "passed",
+      "enhanced_metrics": {
+        "relative_l2": 3.944784005621086e-05,
+        "max_abs_error": 3.013202809543092e-05,
+        "mean_abs_error": 1.0360435666815614e-05
+      }
+    },
+    "script3": {
+      "archive_equals_npy": "passed",
+      "relative_l2_equals_recomputed": "passed",
+      "enhanced_metrics": {
+        "relative_l2": 0.00023848194336605546,
+        "max_abs_error": 0.0005232983513840939,
+        "mean_abs_error": 0.00016057924794505183
+      }
+    }
+  },
+  "seed_check": {
+    "before_clear": 1234,
+    "after_clear": null,
+    "after_restore": 1234
+  }
+}

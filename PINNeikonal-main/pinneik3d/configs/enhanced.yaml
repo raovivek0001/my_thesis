@@ -1,0 +1,17 @@
+extends: const_grad.yaml
+name: enhanced_const_grad
+output_dir: results/enhanced_const_grad
+network:
+  hidden_layers: 6
+  width: 64
+loss:
+  residual_normalization: relative
+training:
+  select_best: true
+  gradient_clip: 5.0
+  sampling:
+    enabled: true
+    warmup: 250
+    update_every: 50
+    candidate_multiplier: 4
+    uniform_fraction: 0.5

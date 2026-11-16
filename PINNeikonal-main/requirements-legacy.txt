@@ -1,0 +1,13 @@
+# Original TensorFlow/SciAnn implementation: use Python 3.8 (64-bit).
+tensorflow==2.2.0
+sciann==0.5.4.0
+Keras==2.3.1
+numpy==1.18.5
+scipy==1.4.1
+pandas==1.0.5
+matplotlib==3.2.2
+h5py==2.10.0
+# Prevent newer protobuf releases from breaking TensorFlow 2.2 imports.
+protobuf==3.20.3
+notebook==6.5.7
+ipykernel==6.29.5

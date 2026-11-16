@@ -1,0 +1,21 @@
+extends: base.yaml
+name: benchmark
+output_dir: results/benchmarks
+evaluation: {batch_size: 16384}
+benchmarks:
+  experiments: [configs/const_grad.yaml, configs/heterogeneous.yaml]
+  grid_sizes: [51, 101, 201]
+  batch_sizes: [512, 2048, 8192]
+  # Exact numbers of Adam collocation draws; each must divide by every batch.
+  collocation_budgets: [1048576, 4194304, 16777216]
+  precisions: [float32, mixed]
+  devices: [auto]
+  modes: [single, surrogate]
+  inference_repeats: 3
+  memory_isolation: true
+  enable_lbfgs: false
+  accuracy_target: 0.01
+  save_fields: true  # Only the designated representative setting is saved/plotted.
+  reuse_completed: true
+  fail_fast: false
+  optional_fmm: true

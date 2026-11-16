@@ -1,0 +1,104 @@
+{
+  "status": "partial",
+  "scope": "full",
+  "static_checks": {
+    "python_files_parsed": 30,
+    "yaml_configs_validated": 11,
+    "full_benchmark_training_runs": 216,
+    "python_syntax_minimum": "3.8"
+  },
+  "unit_tests": {
+    "tests_run": 38,
+    "tests_passed": 26,
+    "tests_skipped": [
+      {
+        "test": "test_analytic_torch_autograd (pinneik3d.tests.test_analytic.AnalyticTests)",
+        "reason": "PyTorch is not installed"
+      },
+      {
+        "test": "test_optional_fmm_point_source (pinneik3d.tests.test_fsm3d.FSMTests)",
+        "reason": "Optional scikit-fmm is not installed"
+      },
+      {
+        "test": "test_factored_residual_analytic_tau_autograd (pinneik3d.tests.test_losses.LossTests)",
+        "reason": "PyTorch is not installed"
+      },
+      {
+        "test": "test_gradient_balancing_uses_gradient_statistics (pinneik3d.tests.test_losses.LossTests)",
+        "reason": "PyTorch is not installed"
+      },
+      {
+        "test": "test_loss_squares_mean_negative_factor (pinneik3d.tests.test_losses.LossTests)",
+        "reason": "PyTorch is not installed"
+      },
+      {
+        "test": "test_source_background_is_finite_and_exactly_zero (pinneik3d.tests.test_losses.LossTests)",
+        "reason": "PyTorch is not installed"
+      },
+      {
+        "test": "test_torch_grid_sample_order_and_gradient (pinneik3d.tests.test_models.ModelTests)",
+        "reason": "PyTorch is not installed"
+      },
+      {
+        "test": "test_adaptive_activation_initialization_and_trainability (pinneik3d.tests.test_networks.NetworkTests)",
+        "reason": "PyTorch is not installed"
+      },
+      {
+        "test": "test_fourier_surrogate_gradients_and_checkpoint (pinneik3d.tests.test_networks.NetworkTests)",
+        "reason": "PyTorch is not installed"
+      },
+      {
+        "test": "test_checkpoint_resume_matches_uninterrupted_weights (pinneik3d.tests.test_training.TrainingTests)",
+        "reason": "PyTorch is not installed"
+      },
+      {
+        "test": "test_gridded_physics_backpropagates_without_grid_sample_double_backward (pinneik3d.tests.test_training.TrainingTests)",
+        "reason": "PyTorch is not installed"
+      },
+      {
+        "test": "test_lbfgs_uses_fixed_weights_and_evaluates_closure (pinneik3d.tests.test_training.TrainingTests)",
+        "reason": "PyTorch is not installed"
+      }
+    ],
+    "failures": [],
+    "errors": [],
+    "executed_tests_passed": true,
+    "all_tests_verified": false
+  },
+  "missing_training_dependencies": [
+    "torch",
+    "numba"
+  ],
+  "source_hash": "0fc783b00b26399cd35741d52caa1f238508f002c6aa058914f62a96be8412f9",
+  "hardware": {
+    "recorded_at_utc": "2026-11-11T20:04:38.636224+00:00",
+    "python_version": "3.8.10",
+    "python_executable": "V:\\thesis\\PINNeikonal-main - Copy\\PINNeikonal-main\\.venv\\Scripts\\python.exe",
+    "os": "Windows-10-10.0.26300-SP0",
+    "cpu_model": "AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD",
+    "logical_cpu_count": 12,
+    "physical_cpu_count": 6,
+    "system_ram_bytes": 16556589056,
+    "device": "not_selected",
+    "torch_version": null,
+    "cuda_version": null,
+    "cuda_available": false,
+    "gpu_model": null,
+    "gpu_models_detected": [
+      "NVIDIA GeForce GTX 1650"
+    ],
+    "gpu_driver": "617.14",
+    "package_versions": {
+      "torch": null,
+      "numpy": "1.18.5",
+      "scipy": "1.4.1",
+      "numba": null,
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.2.2",
+      "psutil": "7.2.2",
+      "pytest": null
+    }
+  },
+  "elapsed_seconds": 7.5468627999999995,
+  "previous_smoke_evidence_retained": true
+}

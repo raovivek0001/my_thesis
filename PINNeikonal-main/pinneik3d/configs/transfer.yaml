@@ -1,0 +1,19 @@
+extends: base.yaml
+name: transfer
+output_dir: results/transfer
+training:
+  iterations: 5000
+  batch_size: 2048
+  eval_every: 100
+  log_every: 100
+  lbfgs: {enabled: false}
+evaluation: {grid_size: 101, validation_grid_size: 31, batch_size: 16384}
+transfer:
+  base_config: configs/const_grad.yaml
+  reuse_pretrained: true
+  pretrained_dir: null
+  changes:
+    - name: moved_source
+      domain: {source: [0.6, 1.2, 0.8]}
+    - name: perturbed_velocity
+      velocity: {v0: 2.1, gradient: [0.0, 0.0, 0.55]}

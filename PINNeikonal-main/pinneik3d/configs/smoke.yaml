@@ -1,0 +1,17 @@
+extends: base.yaml
+name: smoke
+output_dir: results/smoke
+runtime: {device: cpu, precision: float32, num_threads: 1}
+training:
+  iterations: 200
+  batch_size: 128
+  lr: 0.002
+  lr_min: 0.0002
+  log_every: 50
+  eval_every: 50
+  checkpoint_every: 200
+  lbfgs: {enabled: false}
+evaluation:
+  grid_size: 31
+  validation_grid_size: 11
+  batch_size: 4096

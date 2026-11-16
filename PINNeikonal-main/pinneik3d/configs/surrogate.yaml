@@ -1,0 +1,19 @@
+extends: base.yaml
+name: surrogate
+output_dir: results/surrogate
+surrogate:
+  enabled: true
+  source_lattice: [4, 4, 4]
+  source_bounds: [[0.4, 1.6], [0.4, 1.6], [0.4, 1.6]]
+  held_out: [[1.0, 1.0, 1.0], [0.6, 1.0, 1.4]]
+  far_source: auto
+network:
+  width: 64
+  fourier: {enabled: true, size: 32, scale: 1.0}
+training:
+  iterations: 50000
+  batch_size: 4096
+  source_batch_size: 64
+  lbfgs: {enabled: false, batch_size: 16384}
+evaluation: {grid_size: 101, validation_grid_size: 21, batch_size: 8192}
+benchmarks: {accuracy_target: 0.01}

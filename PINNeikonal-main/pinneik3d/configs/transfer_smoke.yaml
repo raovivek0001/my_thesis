@@ -1,0 +1,13 @@
+extends: smoke.yaml
+name: transfer_smoke
+output_dir: results/transfer_smoke
+evaluation: {timing_repeats: 1}
+transfer:
+  base_config: configs/smoke.yaml
+  reuse_pretrained: true
+  pretrained_dir: null
+  changes:
+    - name: moved_source
+      domain: {source: [0.6, 1.2, 0.8]}
+    - name: perturbed_velocity
+      velocity: {v0: 2.1, gradient: [0.0, 0.0, 0.55]}

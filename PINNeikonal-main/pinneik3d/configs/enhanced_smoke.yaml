@@ -1,0 +1,15 @@
+extends: enhanced.yaml
+name: enhanced_smoke
+output_dir: results/enhanced_smoke
+runtime: {device: cpu, precision: float32, num_threads: 1}
+training:
+  iterations: 200
+  batch_size: 128
+  lr: 0.002
+  lr_min: 0.0002
+  log_every: 50
+  eval_every: 50
+  checkpoint_every: 100
+  sampling: {warmup: 50, update_every: 25}
+  lbfgs: {enabled: true, iterations: 5, max_iter: 10, batch_size: 512, history_size: 10}
+evaluation: {grid_size: 31, validation_grid_size: 11, batch_size: 4096}

@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.nbc
+*.nbi
+results/**
+!results/summary.md
+!results/validation.json
+!results/smoke_evidence.json
